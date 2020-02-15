@@ -29,7 +29,7 @@ def read_observations(directory: str, envs: list, num_episodes: int, episode_len
 
 # Load samples
 envs_train = [i for i in range(31)]
-envs_test = [32]
+envs_test = [31]
 train_samples = read_observations('../samples', envs=envs_train, num_episodes=250, episode_len=1000, lidar_res=32)
 test_samples = read_observations('../samples', envs=envs_test, num_episodes=250, episode_len=1000, lidar_res=32)
 
@@ -122,48 +122,52 @@ def generate_and_save_images(model, epoch, test_input):
     # tight_layout minimizes the overlap between 2 sub-plots
     plt.savefig('images/image_at_epoch_{:04d}.png'.format(epoch))
 
-# Training
-best = -1e20
-wait = 0
-patience = 10
-best_weights = model.get_weights()
 
-generate_and_save_images(model, 0, random_vector_for_generation)
 
-for epoch in range(1, epochs + 1):
-    start_time = time.time()
-    for train_x in train_dataset:
-        backward(model, train_x, optimizer, epoch=epoch)
+def main():
+    # Training
+    best = -1e20
+    wait = 0
+    patience = 10
+    best_weights = model.get_weights()
 
-    if epoch % 1 == 0:
-        loss = tf.keras.metrics.Mean()
-    for test_x in test_dataset:
-        losses = get_loss(model, test_x, epoch=epoch, name='test')
-        loss(sum(losses.values()))
-    elbo = -loss.result()
-           
-    if np.greater(elbo, best):
-        best = elbo
-        wait = 0
-        best_weights = model.get_weights()
-    else:
-        wait += 1
-        if wait >= patience:
-            model.stop_training = True
-            print('Restoring model weights from the end of the best epoch.')
-            model.set_weights(best_weights)
-            print('Saving model weights')
-            model.save('models')
-            
-    end_time = time.time()
+    for epoch in range(1, epochs + 1):
+        start_time = time.time()
+        for train_x in train_dataset:
+            backward(model, train_x, optimizer, epoch=epoch)
+
+        if epoch % 1 == 0:
+            loss = tf.keras.metrics.Mean()
+        for test_x in test_dataset:
+            losses = get_loss(model, test_x, epoch=epoch, name='test')
+            loss(sum(losses.values()))
+        elbo = -loss.result()
+
+        if np.greater(elbo, best):
+            best = elbo
+            wait = 0
+            best_weights = model.get_weights()
+        else:
+            wait += 1
+            if wait >= patience:
+                model.stop_training = True
+                print('Restoring model weights from the end of the best epoch.')
+                model.set_weights(best_weights)
+                print('Saving model weights')
+                model.save('models')
+
+        end_time = time.time()
+
+        generate_and_save_images(model, epoch, random_vector_for_generation)
+
+        display.clear_output(wait=False)
+        print('Epoch: {}, Test set ELBO: {}, '
+              'time elapse for current epoch {}'.format(epoch,
+                                                        elbo,
+                                                        end_time - start_time))
+
+    print('Saving model weights')
+    model.save('models')
     
-    generate_and_save_images(model, epoch, random_vector_for_generation)
-    
-    display.clear_output(wait=False)
-    print('Epoch: {}, Test set ELBO: {}, '
-          'time elapse for current epoch {}'.format(epoch,
-                                                    elbo,
-                                                    end_time - start_time))
-
-print('Saving model weights')
-model.save('models')
+if __name__ == "__main__":
+    main()

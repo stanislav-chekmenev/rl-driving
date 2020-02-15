@@ -56,13 +56,13 @@ class CVAE(tf.keras.Model):
         filepath = os.path.join(filepath)
         os.makedirs(filepath, exist_ok=True)
         print('saving model to {}'.format(filepath))
-        self.save_weights('{}/vae_model_7500K.h5'.format(filepath))
+        self.save_weights('{}/vae_model_test.h5'.format(filepath))
         
     def load(self, filepath):
         """ only model weights """
         filepath = os.path.join(filepath)
         print('loading model from {}'.format(filepath))
-        self.load_weights('{}/vae_model_7500K.h5'.format(filepath))
+        self.load_weights('{}/vae_model_test.h5'.format(filepath))
 
     @tf.function
     def sample(self, eps=None):
