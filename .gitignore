@@ -1,0 +1,14 @@
+.pytest_cache
+.ipynb_checkpoints
+__pycache__
+build
+envs
+control
+initial_rollouts
+setup.py
+dist
+tensorboard_logs
+drive
+memory_training
+rl_driving.egg-info
+vae_training

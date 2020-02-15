@@ -1,1 +1,3 @@
+pybullet
 tensorflow-gpu
+tensorflow-probability
