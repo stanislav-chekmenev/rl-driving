@@ -11,7 +11,7 @@ import h5py
 
 from IPython import display
 
-from rldriving.vae.cvae import *
+from rldriving.vae.cvae import CVAE
 
 # Function for loading samples
 def read_observations(directory: str, envs: list, num_episodes: int, episode_len: int, lidar_res: int):
