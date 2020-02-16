@@ -1,5 +1,7 @@
 # PPO with World Models for gym-metacar environment
 
+![](https://files.cargocollective.com/c585588/run3NEW.mp4)
+
 A combination of proximal policy optimization (PPO) and World Models is used to train a self-driving car in gym-metacar environment. More about gym-metacar can be found here: https://github.com/AI-Guru/gym-metacar
 
 # Prerequisites
