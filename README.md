@@ -9,7 +9,7 @@ A combination of proximal policy optimization (PPO) and World Models is used to 
 To install gym-metacar environment run:
 
 ```pyhton
-pip/conda install git+https://github.com/AI-Guru/gym-metacar
+pip install git+https://github.com/AI-Guru/gym-metacar
 ```
 
 You should have chromedriver installed. 
@@ -36,21 +36,20 @@ Firstly, please clone the repo:
 git clone https://github.com/stanislav-chekmenev/rl-driving
 ```
 
+### RLdriving
+
+To install rldriving package:
+
+```python
+cd rldriving
+pip install -e .
+```
 ### Baselines
 
 You will need baselines for the control part if you want to do training. I modified some source code of the default tensorflow 2.0 implementation of baselines, as well as created my custom neural nets for the control part where I used PPO algorithm. So you should simply do the following:
 
 ```python
 cd baselines
-pip install -e .
-```
-
-### RLdriving
-
-To install the environment and rldriving package:
-
-```python
-cd rldriving
 pip install -e .
 ```
 
