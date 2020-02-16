@@ -30,16 +30,21 @@ git clone https://github.com/stanislav-chekmenev/rl-driving
 
 ### Baselines
 
-I modified some source code of the default tensorflow 2.0 implementation of baselines, as well as created my custom neural nets for the control part where I used PPO algorithm. So you should simply do the following:
+You will need baselines for the control part if you want to do training. I modified some source code of the default tensorflow 2.0 implementation of baselines, as well as created my custom neural nets for the control part where I used PPO algorithm. So you should simply do the following:
 
 ```python
 cd baselines
 python install -e .
 ```
 
+### RLdriving
 
+To install the environment and rldriving package:
 
-
+```python
+cd rldriving
+python install -e .
+```
 
 ### Environment specifications
 
@@ -64,4 +69,24 @@ And finally you should add this line to the second if/else clause in the trigger
 script += 'env.setAgentLidar({pts: 32, width: 5, height: 5, pos: -1.5});' + "\n"
 ```
  
+# Pretrained agent
+
+The package comes with a pretrained agent, a complete World Model where for the control part PPO is used. Also, you can find the first two parts of the World Model, which are a variational autoencoder (VAE) and a LSTM with a Gaussian Mixture (Memory). The models are store in the models directory for each part.
+
+### Driving
+
+You can use the agent to enjoy driving and, of course, as a first step for sampling from the environment for further retraining. 
+
+For driving:
+
+```python 
+cd driving
+python drive.py
+```
+
+Perhaps, you would need to change the path to the agent inside the script. 
+
+Enjoy!
+
+
 
