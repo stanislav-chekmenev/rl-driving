@@ -6,6 +6,12 @@ A combination of proximal policy optimization (PPO) and World Models is used to 
 
 # Prerequisites
 
+To install gym-metacar environment run:
+
+```pyhton
+pip/conda install git+https://github.com/AI-Guru/gym-metacar
+```
+
 You should have chromedriver installed. 
 
 ### Mac
