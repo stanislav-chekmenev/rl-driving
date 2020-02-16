@@ -68,7 +68,9 @@ And finally you should add this line to the second if/else clause in the trigger
 ```python
 script += 'env.setAgentLidar({pts: 32, width: 5, height: 5, pos: -1.5});' + "\n"
 ```
- 
+
+You can find more info on the pages of the metacar environment: https://github.com/thibo73800/metacar
+
 # Pretrained agent
 
 The package comes with a pretrained agent, a complete World Model where for the control part PPO is used. Also, you can find the first two parts of the World Model, which are a variational autoencoder (VAE) and a LSTM with a Gaussian Mixture (Memory). The models are store in the models directory for each part.
