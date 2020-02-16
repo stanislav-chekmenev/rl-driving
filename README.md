@@ -36,7 +36,7 @@ You will need baselines for the control part if you want to do training. I modif
 
 ```python
 cd baselines
-python install -e .
+pip install -e .
 ```
 
 ### RLdriving
@@ -45,7 +45,7 @@ To install the environment and rldriving package:
 
 ```python
 cd rldriving
-python install -e .
+pip install -e .
 ```
 
 ### Environment specifications
