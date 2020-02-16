@@ -82,7 +82,7 @@ You can use the agent to enjoy driving and, of course, as a first step for sampl
 For driving:
 
 ```python 
-cd driving
+cd drive
 python drive.py
 ```
 
