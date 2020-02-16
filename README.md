@@ -20,6 +20,27 @@ apt install chromium-chromedriver
 apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
 ```
 
+# Installation
+
+Firstly, please clone the repo:
+
+```python
+git clone https://github.com/stanislav-chekmenev/rl-driving
+```
+
+### Baselines
+
+I modified some source code of the default tensorflow 2.0 implementation of baselines, as well as created my custom neural nets for the control part where I used PPO algorithm. So you should simply do the following:
+
+```python
+cd baselines
+python install -e .
+```
+
+
+
+
+
 ### Environment specifications
 
 You can skip this step totally. It only describes how to change the resolution of the lidar, so you could use the pretrained models and run the scripts without any changes. The default lidar resolution is 5x5.
