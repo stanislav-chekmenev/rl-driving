@@ -73,7 +73,7 @@ You can find more info on the pages of the metacar environment: https://github.c
 
 # Pretrained agent
 
-The package comes with a pretrained agent, a complete World Model where for the control part PPO is used. Also, you can find the first two parts of the World Model, which are a variational autoencoder (VAE) and a LSTM with a Gaussian Mixture (Memory). The models are store in the models directory for each part.
+The package comes with a pretrained agent, a complete World Model where for the control part PPO is used. Also, you can find the first two parts of the World Model, which are a variational autoencoder (VAE) and a LSTM with a Gaussian Mixture (Memory). The models are stored in the models directory for each part.
 
 ### Driving
 
