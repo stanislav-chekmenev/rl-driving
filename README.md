@@ -77,7 +77,9 @@ The package comes with a pretrained agent, a complete World Model where for the 
 
 ### Driving
 
-You can use the agent to enjoy driving and, of course, as a first step for sampling from the environment for further retraining. 
+You can use the agent to enjoy driving and, of course, as a first step for sampling from the environment for further retraining.
+
+A neural network for the policy is in drive directory and is contained in the script wm_ppo_policy.py. This is exactly the same net, as I used for training, which can be found in baselines/baselines/common/models. It's called world_model_mlp.  
 
 For driving:
 
