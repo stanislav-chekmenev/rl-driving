@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: rldriving
+Version: 0.0.1
+Summary: World Models and PPO2 for gym_metacar
+Home-page: https://github.com/stanislav-chekmenev/rl-driving
+Author: Dr. Stanislav Chekmenev
+Author-email: stanislav.chekmenev@gmail.com
+License: UNKNOWN
+Description: World Models and PPO2 for gym_metacar
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
