@@ -11,4 +11,5 @@ tensorboard_logs
 drive
 memory_training
 rl_driving.egg-info
+venv/*
 vae_training
