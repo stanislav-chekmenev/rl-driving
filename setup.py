@@ -9,7 +9,7 @@ setup(
     long_description="World Models and PPO2 for gym_metacar",
     long_description_content_type="text/markdown",
     url="https://github.com/stanislav-chekmenev/rl-driving",
-    install_requires=['h5py==2.10.0', 'imageio==2.6.1', 'ipython==7.9.0', 'matplotlib==3.1.1', 'mpi4py==3.0.3', 
+    install_requires=['h5py==2.10.0', 'imageio==2.6.1', 'ipython==7.16.3', 'matplotlib==3.1.1', 'mpi4py==3.0.3', 
                       'numpy==1.26.0', 'pillow==10.4.0', 'ray==0.7.6', 'setproctitle==1.1.10', 'tensorflow==2.13.1'],
     packages=find_packages()
 )
